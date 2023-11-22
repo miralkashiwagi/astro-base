@@ -1,0 +1,57 @@
+---
+import Card from '../_inc/components/Card.astro';
+import Layout from '../_inc/layouts/Layout.astro';
+import Kv from "../_inc/components/Kv.astro";
+
+//各ページ設定
+const title = 'ページタイトル';
+const desc = '各ページdescription';
+const id = 'home';
+---
+
+<Layout title={title} desc={desc} id={id}>
+  <main>
+    <Kv></Kv>
+
+    <div class="c-container">
+      <section class="c-slider splide" aria-labelledby="carousel-heading">
+        <div class="c-slider__track splide__track">
+          <ul class="c-slider__list splide__list">
+            <li class="c-slider__slide splide__slide">Slide 01</li>
+            <li class="c-slider__slide splide__slide">Slide 02</li>
+            <li class="c-slider__slide splide__slide">Slide 03</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    <div class="home_mv js-fadein">
+      <div class="home_mv__image">
+        <img src="/assets/images/common/sample.jpg" width="2500" height="1666" alt="" />
+      </div>
+      <div class="home_mv__inner">
+        <p class="home_mv__text">テキストテキストテキストテキストテキストテキストテキストテキスト</p>
+        <a href="#" class="c-button">ボタン</a>
+      </div>
+    </div>
+    <section class="c-section">
+      <div class="c-container">
+        <h2 class="c-heading_level_01">テスト</h2>
+        <div class="c-grid -col_04">
+          <Card href="#" title="title">
+            <p>少し長いテキスト少し長いテキスト</p>
+          </Card>
+          <Card href="#" title="title">
+            <p>少し長いテキスト少し長いテキスト</p>
+          </Card>
+          <Card href="#" title="title">
+            <p>
+              テキスト<br />てきすと
+            </p>
+          </Card>
+        </div>
+      </div>
+    </section>
+    <section id="hoge">test</section>
+  </main>
+</Layout>

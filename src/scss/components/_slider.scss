@@ -1,0 +1,8 @@
+@use '../abstracts/index' as *;
+
+.c-slider{
+  &__slide{
+    height: 200px;
+    background: $color-primary;
+  }
+}

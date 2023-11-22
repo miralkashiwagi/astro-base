@@ -1,0 +1,41 @@
+---
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import '../../scss/style.scss';
+import '../etc/LocalScripts.astro';
+
+let { title, desc, id } = Astro.props;
+
+//サイト設定
+const sitetitle = 'サイト名';
+const sitedesc = 'サイト共通description';
+
+if (!desc) {
+  desc = sitedesc;
+}
+if (!title) {
+  title = sitetitle;
+} else {
+  title = title + ' | ' + sitetitle;
+}
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <title>{title}</title>
+    <meta name="description" content={desc} />
+  </head>
+  <body class="">
+    <Header id={id} />
+    <slot />
+    <Footer />
+
+    <script is:inline src="/assets/js/static.js" defer></script>
+    <script src="../../js/bundle.js"></script>
+  </body>
+</html>

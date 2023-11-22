@@ -1,0 +1,12 @@
+@use '../abstracts/index' as *;
+
+.c-footer {
+  margin: 0 auto;
+  border-bottom: solid 1px #ccc;
+  padding: 20px;
+  display: none;
+
+  &__logo {
+    font-size: 3rem;
+  }
+}

@@ -1,0 +1,41 @@
+---
+const { id } = Astro.props;
+
+let TitleElement = 'div';
+if (id === 'home') {
+  TitleElement = 'h1';
+}
+---
+
+<header class="c-header">
+  <div class="c-header__inner">
+    <TitleElement class="c-header__logo">
+      <a href="/">
+        <img src="/assets/images/common/logo.svg" alt="logo" width="200" height="63" />
+      </a>
+    </TitleElement>
+    <nav class="c-header__nav">
+      <ul class="c-gnav">
+        <li class="c-gnav__item">
+          <a href="/#hoge" class="c-gnav__link">アンカー</a>
+        </li>
+        <li class="c-gnav__item">
+          <a href="/sub-page/" class="c-gnav__link">下層ページ</a>
+        </li>
+        <li>
+          <a href="/sub-page/" class="c-gnav__link">下層ページ</a>
+          <div class="c-gnav__sub" hidden>
+            <ul class="c-gnav__sub_list">
+              <li class="c-gnav__sub_item">
+                <a href="/sub-page/" class="c-gnav__sub_link">下層ページ</a>
+              </li>
+              <li class="c-gnav__sub_item">
+                <a href="/sub-page/" class="c-gnav__sub_link">下層ページ</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,16 @@
+@use '../abstracts/index' as *;
+
+.u-block_center{
+  display:block;
+  margin-left:auto;
+  margin-right:auto
+}
+.u-left{
+  text-align:left
+}
+.u-center{
+  text-align:center
+}
+.u-right{
+  text-align:right
+}

@@ -1,0 +1,20 @@
+@use '../abstracts/index' as *;
+
+.c-header {
+  background: $color-white;
+  margin: 0 auto;
+  padding: rem-calc(20) rem-calc(40);
+
+  &__inner {
+    @include mq(md, min) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  &__logo {
+    font-size: 3rem;
+  }
+  &__nav {
+  }
+}

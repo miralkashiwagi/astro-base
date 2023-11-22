@@ -1,0 +1,15 @@
+@use '../abstracts/index' as *;
+
+.c-card {
+  background: #eee;
+  border-radius: 1rem;
+  padding: 2rem;
+  display: block;
+}
+.c-card__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.c-card__body {
+  margin-block: 1rem;
+}

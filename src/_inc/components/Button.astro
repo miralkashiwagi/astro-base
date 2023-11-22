@@ -1,0 +1,18 @@
+---
+export interface Props {
+  type: string;
+  text: string;
+  href: string;
+}
+
+const { type, text, href } = Astro.props;
+---
+
+{
+  type === 'a' && (
+    <a class="c-button" href={href}>
+      {text}
+    </a>
+  )
+}
+{type === 'span' && <span class="c-button">{text}</span>}

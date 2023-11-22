@@ -1,0 +1,33 @@
+@use "../abstracts/index" as *;
+
+.c-button {
+  display: inline-flex;
+  align-items: center;
+  gap: rem-calc(24);
+  color: #fff;
+  background: $color-black;
+  text-align: center;
+  padding: 1rem;
+  transition: background-color 0.2s,color 0.2s;
+
+  &::after {
+    content: "";
+    width: rem-calc(24);
+    height: rem-calc(24);
+    background: $color-white;
+    transition: background-color 0.2s;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-image: url(/assets/images/common/icon-arrow.svg);
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+  }
+
+  &:hover {
+    background: $color-white;
+    color: $color-black;
+
+    &::after {
+      background: $color-black;
+    }
+  }
+}

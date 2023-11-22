@@ -1,0 +1,28 @@
+@use "variables" as *;
+
+@function rem-calc($pixels) {
+  @return calc($pixels/$base-fs * 1rem);
+}
+
+$mq-breakpoints: (
+  xxl: 1440px,
+  xl: 1280px,
+  lg: 1024px,
+  md: 768px,
+  sm: 425px,
+  xs: 375px,
+) !default;
+
+@mixin mq($breakpoint: md, $rule: max) {
+  $breakpoint: map_get($mq-breakpoints, $breakpoint);
+
+  @if $rule==min {
+    @media not screen and (max-width: $breakpoint) {
+      @content;
+    }
+  } @else {
+    @media screen and (max-width: $breakpoint) {
+      @content;
+    }
+  }
+}

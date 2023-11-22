@@ -1,0 +1,22 @@
+@use '../abstracts/index' as *;
+
+.c-gnav {
+  @include mq(md, min) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__item {
+    @include mq(md, min) {
+      margin-inline: 2rem;
+    }
+  }
+  &__link {
+    @media (hover: hover) {
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+}
