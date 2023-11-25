@@ -2,6 +2,7 @@
 import Card from '../_inc/components/Card.astro';
 import Layout from '../_inc/layouts/Layout.astro';
 import Kv from "../_inc/components/Kv.astro";
+import Slider from '../_inc/components/Slider.astro';
 
 //各ページ設定
 const title = 'ページタイトル';
@@ -14,15 +15,7 @@ const id = 'home';
     <Kv></Kv>
 
     <div class="c-container">
-      <section class="c-slider splide" aria-labelledby="carousel-heading">
-        <div class="c-slider__track splide__track">
-          <ul class="c-slider__list splide__list">
-            <li class="c-slider__slide splide__slide">Slide 01</li>
-            <li class="c-slider__slide splide__slide">Slide 02</li>
-            <li class="c-slider__slide splide__slide">Slide 03</li>
-          </ul>
-        </div>
-      </section>
+      <Slider slides={["test1","test2","test3"]}></Slider>
     </div>
 
     <div class="home_mv js-fadein">

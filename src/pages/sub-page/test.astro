@@ -2,6 +2,7 @@
 import Layout from '../../_inc/layouts/Layout.astro';
 import Kv from '../../_inc/components/Kv.astro';
 import Button from "../../_inc/components/Button.astro";
+import Slider from '../../_inc/components/Slider.astro';
 ---
 
 <Layout title="タイトルタグ">
@@ -12,7 +13,20 @@ import Button from "../../_inc/components/Button.astro";
         <h2>あああ</h2>
       </div>
       <Button text="ボタン" />
-
+      <Slider slides={["test1","test2","test3"]}></Slider>
     </section>
   </main>
 </Layout>
+
+<style>
+  .l-section {
+    padding: 20px;
+  }
+</style>
+
+<script>
+  function test() {
+    console.log("test");
+  }
+  test();
+</script>

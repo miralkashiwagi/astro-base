@@ -1,0 +1,31 @@
+---
+const { slides } = Astro.props;
+---
+
+<section class="c-slider splide" aria-labelledby="carousel-heading">
+  <div class="c-slider__track splide__track">
+    <ul class="c-slider__list splide__list">
+      {slides.map((slide, index) => (
+        <li class="c-slider__slide splide__slide">{slide}</li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<script>
+  function splide(){
+    Splide('.splide', {
+      type: 'loop',
+      perPage: 3,
+      perMove: 1,
+      gap: '1rem',
+      pagination: false,
+      breakpoints: {
+        768: {
+          perPage: 1,
+        }
+      }
+    }).mount();
+  }
+  splide();
+</script>

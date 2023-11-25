@@ -29,20 +29,7 @@ function gsapFunction(){
   });
 }
 
-function splide(){
-  Splide('.splide', {
-    type: 'loop',
-    perPage: 3,
-    perMove: 1,
-    gap: '1rem',
-    pagination: false,
-    breakpoints: {
-      768: {
-        perPage: 1,
-      }
-    }
-  }).mount();
-}
+
 
 
 // function normalFadeIn() {
@@ -82,4 +69,4 @@ function splide(){
 
 // normalFadeIn();
 gsapFunction();
-splide();
+// splide();
