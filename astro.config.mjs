@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 // https://zenn.dev/ixkaito/articles/astro-relative-links
 import relativeLinks from 'astro-relative-links';
 // import compress from "astro-compress";
+import htmlBeautifier from "astro-html-beautifier";
 
 // https://astro.build/config
 export default defineConfig({
@@ -28,8 +29,8 @@ export default defineConfig({
     //   Image: false,
     //   JavaScript: true,
     //   SVG: false,
-    // })
-  ],
+    // }),
+    htmlBeautifier()],
 
   vite: {
     build: {

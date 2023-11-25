@@ -18,9 +18,10 @@
 	},
 	"devDependencies": {
 		"astro": "^3.5.7",
+		"astro-compress": "^2.2.3",
+		"astro-html-beautifier": "bangkitdev/astro-html-beautifier",
 		"astro-relative-links": "^0.3.4",
 		"markuplint": "^3.14.0",
-		"sass": "^1.58.3",
-		"vite-plugin-sass": "^0.1.0"
+		"sass": "^1.58.3"
 	}
 }
