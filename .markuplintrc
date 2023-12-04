@@ -1,4 +1,7 @@
 {
+  "parser": {
+    ".astro$": "@markuplint/astro-parser"
+  },
   "rules": {
     "attr-duplication": true,
     "deprecated-attr": false,

@@ -4,7 +4,7 @@
 
 
 /* ================
-AddPackagesに入れたJSの使用
+bundle.jsに入れたJSの使用
 ================ */
 
 SmoothScroll('a[href*="#"]', {
