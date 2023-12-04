@@ -13,6 +13,25 @@
 └── package.json
 ```
 
+# コマンド
+
+Node.js v18系で動作確認
+
+ローカルサーバー起動
+```
+npm start
+```
+
+ビルド
+```
+npm run build
+```
+
+markuplint
+```
+npm run lint
+```
+
 
 # CSS設計方針
 
