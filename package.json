@@ -18,7 +18,7 @@
 	},
 	"devDependencies": {
 		"@markuplint/astro-parser": "^3.12.0",
-		"astro": "^3.5.7",
+		"astro": "^4.0.1",
 		"astro-compress": "^2.2.3",
 		"astro-html-beautifier": "bangkitdev/astro-html-beautifier",
 		"astro-relative-links": "^0.3.4",
