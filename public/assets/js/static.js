@@ -7,6 +7,7 @@
 bundle.jsに入れたJSの使用
 ================ */
 
+
 SmoothScroll('a[href*="#"]', {
   ignore: ['[data-scroll-ignore]'], // 無効にしたいリンクのセレクタ
   // header: '.l-header', // 固定ヘッダーのセレクタ
@@ -30,6 +31,18 @@ function gsapFunction(){
 }
 
 
+
+function drawerMenuRun(){
+  // ページの読み込みが完了したら、DOM要素を取得し、
+  // DrawerMenuクラスのインスタンスを生成し、初期化します。
+  document.addEventListener('DOMContentLoaded', () => {
+    const drawerElement = document.querySelector('#js-drawer-menu');
+    const hamburgerElement = document.querySelector('#js-drawer-menu-button');
+
+    const attachDrawer = DrawerMenu(drawerElement, hamburgerElement);
+    attachDrawer.init();
+  });
+}
 
 
 // function normalFadeIn() {
@@ -69,4 +82,5 @@ function gsapFunction(){
 
 // normalFadeIn();
 gsapFunction();
+drawerMenuRun();
 // splide();

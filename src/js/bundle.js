@@ -7,6 +7,7 @@ import scrollTrigger from 'gsap/ScrollTrigger';
 // import { SimpleScrollTrigger } from 'simple-scroll-trigger';
 import splide from '@splidejs/splide';
 
+import {DrawerMenu} from './class/drawer-menu.js';
 
 /* ================
 window.AddPackagesにいれる
@@ -24,6 +25,10 @@ class AddPackages {
 
   Splide($settings) {
     return new splide($settings);
+  }
+
+  DrawerMenu(...$settings){
+    return new DrawerMenu(...$settings);
   }
 
   // SimpleScrollTrigger($settings) {

@@ -1,4 +1,6 @@
 ---
+import DrawerMenu from '../layouts/DrawerMenu.astro';
+
 const { id } = Astro.props;
 
 let TitleElement = 'div';
@@ -7,7 +9,7 @@ if (id === 'home') {
 }
 ---
 
-<header class="c-header">
+<header class="c-header" id="js-header">
   <div class="c-header__inner">
     <TitleElement class="c-header__logo">
       <a href="/">
@@ -38,4 +40,5 @@ if (id === 'home') {
       </ul>
     </nav>
   </div>
+<DrawerMenu></DrawerMenu>
 </header>
