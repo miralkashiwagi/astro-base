@@ -17,12 +17,12 @@
 		"smooth-scroll": "^16.1.3"
 	},
 	"devDependencies": {
-		"@markuplint/astro-parser": "^3.12.0",
-		"astro": "^4.0.1",
-		"astro-compress": "^2.2.3",
+		"@markuplint/astro-parser": "^4.0.2",
+		"astro": "^4.3.5",
+		"astro-compress": "^2.2.9",
 		"astro-html-beautifier": "bangkitdev/astro-html-beautifier",
-		"astro-relative-links": "^0.3.4",
-		"markuplint": "^3.14.0",
+		"astro-relative-links": "^0.3.7",
+		"markuplint": "^4.0.3",
 		"sass": "^1.58.3"
 	}
 }
