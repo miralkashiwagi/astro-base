@@ -1,5 +1,12 @@
 @use "../abstracts" as *;
-
+:root {
+  @include z-map((
+          --z-header: auto,
+          --z-pagetop: auto,
+          --z-hamburger: 100,
+          --z-drawer: auto,
+  ));
+}
 html,
 body {
   -webkit-text-size-adjust: 100%;

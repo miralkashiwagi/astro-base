@@ -6,6 +6,8 @@ import gsap from 'gsap';
 import scrollTrigger from 'gsap/ScrollTrigger';
 // import { SimpleScrollTrigger } from 'simple-scroll-trigger';
 import splide from '@splidejs/splide';
+import MicroModal from 'micromodal';
+import { DrawerMenu } from './scripts/drawer.js';
 
 
 /* ================
@@ -16,6 +18,7 @@ class AddPackages {
   constructor() {
     this.gsap = gsap;
     this.gsap.registerPlugin(scrollTrigger);
+    this.MicroModal = MicroModal;
   }
 
   SmoothScroll($trigger, $settings) {
@@ -25,6 +28,11 @@ class AddPackages {
   Splide($settings) {
     return new splide($settings);
   }
+
+  DrawerMenu(...$settings){
+    return new DrawerMenu(...$settings);
+  }
+
 
   // SimpleScrollTrigger($settings) {
   //   new SimpleScrollTrigger($settings);

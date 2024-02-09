@@ -3,6 +3,10 @@
 ================ */
 
 
+
+
+
+
 /* ================
 bundle.jsに入れたJSの使用
 ================ */
@@ -30,6 +34,20 @@ function gsapFunction(){
 }
 
 
+function MicroModalFunction(){
+  MicroModal.init();
+}
+
+
+function DrawerMenuFunction(){
+  // ページの読み込みが完了したら、DOM要素を取得し、
+  // DrawerMenuクラスのインスタンスを生成し、初期化します。
+  document.addEventListener('DOMContentLoaded', () => {
+
+    const attachDrawer = DrawerMenu('#js-drawer-menu', '#js-drawer-menu-button');
+    attachDrawer.init();
+  });
+}
 
 
 // function normalFadeIn() {
@@ -69,4 +87,6 @@ function gsapFunction(){
 
 // normalFadeIn();
 gsapFunction();
+MicroModalFunction();
+DrawerMenuFunction();
 // splide();

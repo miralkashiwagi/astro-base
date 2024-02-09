@@ -26,3 +26,33 @@ $mq-breakpoints: (
     }
   }
 }
+
+@mixin z-map($z-map) {
+  $before-index: -1;
+
+  @each $name, $value in $z-map {
+    $result-z: null;
+
+    @if $value == auto {
+      $result-z: $before-index + 1;
+    } @else {
+      $result-z: $value;
+    }
+
+    $before-index: $result-z;
+    #{$name}: $result-z;
+  }
+}
+
+
+
+@mixin modalOverlay(){
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+

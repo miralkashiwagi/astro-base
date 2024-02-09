@@ -1,0 +1,31 @@
+@use '../abstracts/index' as *;
+
+//https://gist.github.com/ghosh/4f94cf497d7090359a5c9f81caf60699
+
+[data-modal-wrapper]{
+  display: none;
+}
+[data-modal-wrapper].is-open{
+  display: block;
+}
+
+
+
+
+[data-modal-wrapper][aria-hidden="false"] [data-modal-overlay] {
+  animation: fadeIn .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+  @include modalOverlay();
+}
+
+[data-modal-wrapper][aria-hidden="false"] [data-modal-container] {
+  animation: fadeIn .3s cubic-bezier(0, 0, .2, 1);
+}
+
+[data-modal-wrapper][aria-hidden="true"] [data-modal-overlay]  {
+  animation: fadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+[data-modal-wrapper][aria-hidden="true"] [data-modal-container] {
+  animation: fadeOut .3s cubic-bezier(0, 0, .2, 1);
+}
+

@@ -1,6 +1,7 @@
 //レイアウトパーツ
 @use 'header';
 @use 'gnav';
+@use 'drawer-menu';
 @use 'footer';
 @use 'container';
 @use 'grid';
@@ -9,5 +10,6 @@
 
 
 //デザインパーツ
+@use 'modal';
 @use 'button';
 @use 'card';
