@@ -8,9 +8,12 @@
     "deprecated-element": true,
     "disallowed-element": true,
     "doctype": true,
+    "heading-levels": true,
     "id-duplication": true,
-    "ineffective-attr": false,
+    "ineffective-attr": true,
     "invalid-attr": true,
+    "no-duplicate-dt": true,
+    "no-empty-palpable-content": false,
     "landmark-roles": false,
     "no-hard-code-id": false,
     "no-refer-to-non-existent-id": false,
@@ -19,8 +22,9 @@
     "required-attr": false,
     "required-element": true,
     "required-h1": true,
+    "require-datetime": true,
     "use-list": false,
-    "wai-aria": false
+    "wai-aria": true
   },
   "childNodeRules": [
     {
