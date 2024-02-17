@@ -7,6 +7,8 @@ import scrollTrigger from 'gsap/ScrollTrigger';
 // import { SimpleScrollTrigger } from 'simple-scroll-trigger';
 import splide from '@splidejs/splide';
 
+import Accordion from './class/Accordion.js';
+
 
 /* ================
 window.AddPackagesにいれる
@@ -16,6 +18,10 @@ class AddPackages {
   constructor() {
     this.gsap = gsap;
     this.gsap.registerPlugin(scrollTrigger);
+  }
+
+  Accordion($selector){
+    return new Accordion($selector);
   }
 
   SmoothScroll($trigger, $settings) {

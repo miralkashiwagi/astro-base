@@ -3,6 +3,7 @@ import Card from '../_inc/components/Card.astro';
 import Layout from '../_inc/layouts/Layout.astro';
 import Kv from "../_inc/components/Kv.astro";
 import Slider from '../_inc/components/Slider.astro';
+import Accordion from '../_inc/components/Accordion.astro';
 
 //各ページ設定
 const title = 'ページタイトル';
@@ -29,6 +30,21 @@ const id = 'home';
     </div>
     <section class="c-section">
       <div class="c-container">
+
+        <Accordion title='タイトル' open>
+          コンテンツ
+        </Accordion>
+
+        <Accordion title='タイトル'>
+          コンテンツ
+
+
+          <Accordion title='タイトル'>
+            コンテンツ
+          </Accordion>
+        </Accordion>
+
+
         <h2 class="c-heading_level_01">テスト</h2>
         <div class="c-grid -col_04">
           <Card href="#" title="title">

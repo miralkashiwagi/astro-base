@@ -1,0 +1,17 @@
+---
+const {title,open} = Astro.props
+const isOpenClass = open ? ' is-open' : '';
+---
+
+<details class={'c-accordion js-accordion' + isOpenClass} open={!!open}>
+  <summary class='c-accordion__title'>
+    {title}
+  </summary>
+  <div class='c-accordion__content-wrap'>
+    <div class='c-accordion__content'>
+      <div class='c-accordion__content-inner'>
+        <slot />
+      </div>
+    </div>
+  </div>
+</details>

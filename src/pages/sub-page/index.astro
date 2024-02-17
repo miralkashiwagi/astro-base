@@ -2,6 +2,7 @@
 import Layout from '../../_inc/layouts/Layout.astro';
 import Kv from '../../_inc/components/Kv.astro';
 import Button from "../../_inc/components/Button.astro";
+import Accordion from '../../_inc/components/Accordion.astro';
 ---
 
 <Layout title="タイトルタグ">
@@ -10,9 +11,22 @@ import Button from "../../_inc/components/Button.astro";
     <section class="l-section">
       <div class="c-container">
         <h2>あああ</h2>
-      </div>
-      <Button text="ボタン" />
 
+
+      <Accordion title='タイトル' open>
+        コンテンツ
+      </Accordion>
+
+      <Accordion title='タイトル'>
+        コンテンツ
+
+        <Accordion title='タイトル'>
+          コンテンツ
+        </Accordion>
+
+      </Accordion>
+
+      </div>
     </section>
   </main>
 </Layout>

@@ -3,9 +3,11 @@
 ================ */
 
 
+
 /* ================
 bundle.jsに入れたJSの使用
 ================ */
+
 
 SmoothScroll('a[href*="#"]', {
   ignore: ['[data-scroll-ignore]'], // 無効にしたいリンクのセレクタ
@@ -15,6 +17,7 @@ SmoothScroll('a[href*="#"]', {
   easing: 'easeIn' // イージングを指定できます
 });
 
+Accordion();
 
 function gsapFunction(){
   gsap.set('.js-fadein', {
