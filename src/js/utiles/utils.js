@@ -77,22 +77,22 @@ export { backfaceFixed }
  *   "max-width: 500px"//省略可
  * );
  */
-const responsiveMatch = (matchAction,unMatchAction,media = 'max-width: 768px') => {
+const responsiveMatch = (match,unMatch,media = 'max-width: 768px') => {
   //第3引数に入れたメディアクエリもしくは768pxのところでMediaQueryList作成
-  const mediaQuery = window.matchMedia('('+media+')');
+  const mql = window.matchMedia('('+media+')');
 
   //MediaQueryListにマッチした時の動作、しなかった時の動作を引数から受け取る
-  function handleMediaChange(event) {
-    if (event.matches) {
-      matchAction();
+  function action(e) {
+    if (e.matches) {
+      match();
     } else {
-      unMatchAction();
+      unMatch();
     }
   }
 
   //MediaQueryListのChangeイベント時に発火させる
-  mediaQuery.addEventListener("change", handleMediaChange);
+  mql.addEventListener("change", action);
   //ページ読み込み時にも発火させる
-  handleMediaChange(mediaQuery);
+  action(mql);
 }
 export { responsiveMatch }
