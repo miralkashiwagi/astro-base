@@ -78,9 +78,10 @@ export { backfaceFixed }
  * );
  */
 const responsiveMatch = (matchAction,unMatchAction,media = 'max-width: 768px') => {
-  //第3引数に入れたメディアクエリもしくは768pxのところでmediaQuery
+  //第3引数に入れたメディアクエリもしくは768pxのところでMediaQueryList作成
   const mediaQuery = window.matchMedia('('+media+')');
 
+  //MediaQueryListにマッチした時の動作、しなかった時の動作を引数から受け取る
   function handleMediaChange(event) {
     if (event.matches) {
       matchAction();
@@ -89,8 +90,9 @@ const responsiveMatch = (matchAction,unMatchAction,media = 'max-width: 768px') =
     }
   }
 
+  //MediaQueryListのChangeイベント時に発火させる
   mediaQuery.addEventListener("change", handleMediaChange);
+  //ページ読み込み時にも発火させる
   handleMediaChange(mediaQuery);
-  window.addEventListener("pageshow", () => handleMediaChange(mediaQuery));
 }
 export { responsiveMatch }
