@@ -1,14 +1,13 @@
 //レイアウトパーツ
 @use 'header';
 @use 'gnav';
+@use "hamburger";
 @use 'footer';
 @use 'container';
-@use 'grid';
 
-@use 'slider';
-
-@use 'accordion';
 
 //デザインパーツ
 @use 'button';
 @use 'card';
+@use 'slider';
+@use 'accordion';

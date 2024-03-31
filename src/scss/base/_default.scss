@@ -1,6 +1,9 @@
 @use "../abstracts" as *;
 
-html,
+html {
+
+}
+
 body {
   -webkit-text-size-adjust: 100%;
   background: $color-back;
@@ -34,16 +37,19 @@ img {
   max-width: 100%;
   vertical-align: bottom;
 }
+
 table {
   border-collapse: collapse;
   margin: 0 auto;
   width: 100%;
 }
+
 td,
 th {
   border: 1px solid #ccc;
   vertical-align: top;
 }
+
 input,
 textarea {
   background-color: #fff;
@@ -52,6 +58,7 @@ textarea {
   margin: 0;
   padding: 5px 7px;
 }
+
 input[type="text"],
 textarea {
   border: 1px solid #aaa;
@@ -59,6 +66,7 @@ textarea {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
+
 input[type="text"]:focus,
 textarea:focus {
   border: 1px solid #52a8ec;

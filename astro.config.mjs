@@ -1,11 +1,14 @@
 import { defineConfig } from 'astro/config';
 // https://zenn.dev/ixkaito/articles/astro-relative-links
 import relativeLinks from 'astro-relative-links';
-// import compress from "astro-compress";
+import compress from "astro-compress";
 import htmlBeautifier from "astro-html-beautifier";
 
 // https://astro.build/config
 export default defineConfig({
+
+  // devToolbar: { enabled: false },
+
   //開発時の末尾のスラッシュの挙動を一貫させるため、常に末尾にスラッシュを追加する
   trailingSlash: 'always',
 
@@ -21,20 +24,20 @@ export default defineConfig({
 
     //相対リンクを有効化
     relativeLinks(),
-
+    //
     //圧縮設定
-    // compress({
-    //   CSS: false,
-    //   HTML: false,
-    //   Image: false,
-    //   JavaScript: true,
-    //   SVG: false,
-    // }),
+    (await import("astro-compress")).default({
+      CSS: true,
+      HTML: false,
+      JavaScript: true,
+      Image:true,
+      SVG:true,
+    }),
     htmlBeautifier()],
 
   vite: {
     build: {
-      minify: false,
+      // minify: false,
       rollupOptions: {
         output: {
           //https://cumak.net/blog/astro/ cssのファイル名をわかりやすいものに
@@ -46,11 +49,13 @@ export default defineConfig({
             return `assets/[ext]/[name][extname]`;
           },
 
-          entryFileNames: entryInfo => {
+          entryFileNames: (entryInfo) => {
+            console.log(entryInfo)
             //entryInfo.moduleIdsの中に、srcの文字列を含むものがあったら
             if(entryInfo.moduleIds.some(moduleId => moduleId.includes('src'))) {
               //entryInfo.moduleIdsの中から、srcとastroを含むものを取得
               let filePath = entryInfo.moduleIds.find(moduleId => moduleId.includes('src') && moduleId.includes('.astro'));
+              console.log(filePath)
               if(filePath === undefined) {
                 return `assets/js/bundle.js`;
               }

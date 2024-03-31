@@ -1,14 +1,17 @@
 ---
 import Header from './Header.astro';
 import Footer from './Footer.astro';
+
+import "@splidejs/splide/dist/css/splide.min.css";
 import '../../scss/style.scss';
-import '../etc/LocalScripts.astro';
+import '../etc/BundleScripts.astro';
 
 let { title, desc, id } = Astro.props;
 
 //サイト設定
-const sitetitle = 'サイト名';
-const sitedesc = 'サイト共通description';
+const sitetitle = 'サイトのタイトル';
+const sitedesc = 'サイトの説明文';
+const domain ='https://example.com';
 
 if (!desc) {
   desc = sitedesc;
@@ -22,19 +25,29 @@ if (!title) {
 
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" href="/assets/images/favicon.ico" />
+  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+  <title>{title}</title>
+  <meta name="description" content={desc} />
+  <meta content={title} property="og:title">
+  <meta content={desc} property="og:description">
+  <meta content={domain + "assets/images/ogp.png"} property="og:image">
+  <meta content={domain} property="og:url">
+  <meta content="website" property="og:type">
+  <meta content="ja_JP" property="og:locale">
 
-    <title>{title}</title>
-    <meta name="description" content={desc} />
-  </head>
-  <body class="">
-    <Header id={id} />
-    <slot />
-    <Footer />
-    <script src="../../js/bundle.js"></script>
-    <script is:inline src="/assets/js/static.js" defer></script>
-  </body>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@900&family=Noto+Sans+JP:wght@100..900&display=swap" rel="preload" as="style">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@900&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+</head>
+<body class="">
+<Header />
+<slot />
+<Footer />
+<script is:inline src="/assets/js/static.js"></script>
+</body>
 </html>

@@ -63,3 +63,33 @@ const backfaceFixed = (fixed) => {
   if (!fixed) window.scrollTo(0, scrollY * -1);
 };
 export { backfaceFixed }
+
+
+/**
+ * レスポンシブ対応JS切り替え
+ * responsiveMatch(
+ *   () => {
+ *     console.log("PC")
+ *   },
+ *   () => {
+ *     console.log("SP")
+ *   },
+ *   "max-width: 500px"//省略可
+ * );
+ */
+const responsiveMatch = (pcAction,spAction,media = 'max-width: 768px') => {
+  const mediaQuery = window.matchMedia('('+media+')');
+
+  function handleMediaChange(event) {
+    if (event.matches) {
+      spAction();
+    } else {
+      pcAction();
+    }
+  }
+
+  mediaQuery.addEventListener("change", handleMediaChange);
+  handleMediaChange(mediaQuery);
+  window.addEventListener("pageshow", () => handleMediaChange(mediaQuery));
+}
+export { responsiveMatch }

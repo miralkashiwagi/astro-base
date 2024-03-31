@@ -1,0 +1,54 @@
+@use '../abstracts/index' as *;
+
+.c-hamburger {
+  @include mq(lg, min) {
+    display: none;
+  }
+  background: $color-black;
+  border-radius: 50%;
+  position: absolute;
+  width: rem-calc(44);
+  height: rem-calc(44);
+  top: rem-calc(8);
+  right: rem-calc(16);
+  transition: all 0.24s ease;
+
+}
+
+.c-hamburger__line{
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 20px;
+  height: 2px;
+  background-color: $color-secondary;
+  -webkit-transition: inherit;
+  transition: inherit;
+
+  &::before,&::after{
+    content: "";
+    position: absolute;
+    display: block;
+    inset: 0;
+    background-color: inherit;
+    transition: inherit;
+  }
+  &::before{
+    translate: 0 -5px;
+  }
+  &::after{
+    translate: 0 5px;
+  }
+}
+
+
+.c-hamburger.is-open{
+  .c-hamburger__line {
+    rotate: 30deg;
+    &::before,&::after{
+      translate: 0;
+      rotate: -60deg;
+    }
+
+  }
+}

@@ -14,7 +14,12 @@ if (id === 'home') {
         <img src="/assets/images/common/logo.svg" alt="logo" width="200" height="63" />
       </a>
     </TitleElement>
-    <nav class="c-header__nav">
+    <button type="button" class="c-hamburger" id="js-sp-button">
+      <span class="c-hamburger__line">
+      <span class="u-visually-hidden">メニューを開閉する</span>
+      </span>
+    </button>
+    <nav class="c-header__nav" id='js-sp-nav'>
       <ul class="c-gnav">
         <li class="c-gnav__item">
           <a href="/#hoge" class="c-gnav__link">アンカー</a>

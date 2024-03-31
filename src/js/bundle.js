@@ -6,8 +6,9 @@ import gsap from 'gsap';
 import scrollTrigger from 'gsap/ScrollTrigger';
 // import { SimpleScrollTrigger } from 'simple-scroll-trigger';
 import splide from '@splidejs/splide';
+import {responsiveMatch} from './utiles/utils.js';
 
-import Accordion from './class/Accordion.js';
+// import Accordion from './class/Accordion.js';
 
 
 /* ================
@@ -18,18 +19,19 @@ class AddPackages {
   constructor() {
     this.gsap = gsap;
     this.gsap.registerPlugin(scrollTrigger);
+    this.responsiveMatch = responsiveMatch;
   }
 
-  Accordion($selector){
-    return new Accordion($selector);
+  // Accordion($selector){
+  //   return new Accordion($selector);
+  // }
+
+  SmoothScroll(trigger, settings) {
+    return new SmoothScroll(trigger, settings);
   }
 
-  SmoothScroll($trigger, $settings) {
-    return new SmoothScroll($trigger, $settings);
-  }
-
-  Splide($settings) {
-    return new splide($settings);
+  splide(target,settings) {
+    return new splide(target,settings);
   }
 
   // SimpleScrollTrigger($settings) {

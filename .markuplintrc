@@ -34,5 +34,44 @@
         "invalid-attr": false
       }
     }
+  ],
+  "nodeRules": [
+    {
+      "selector": "meta[property]",
+      "rules": {
+        "invalid-attr": {
+          "option": {
+            "attrs": {
+              "property": {
+                "type": "Any"
+              },
+              "content": {
+                "type": "Any"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "tagName": "meta",
+      "rules": {
+        "required-attr": false
+      }
+    },
+    {
+      "tagName": "iframe",
+      "rules": {
+        "invalid-attr": false,
+        "required-attr": false
+      }
+    },
+    {
+      "selector": ".fb-like",
+      "rules": {
+        "invalid-attr": false,
+        "required-attr": false
+      }
+    }
   ]
 }
