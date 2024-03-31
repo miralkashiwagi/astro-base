@@ -69,22 +69,23 @@ export { backfaceFixed }
  * レスポンシブ対応JS切り替え
  * responsiveMatch(
  *   () => {
- *     console.log("PC")
+ *     console.log("Match")
  *   },
  *   () => {
- *     console.log("SP")
+ *     console.log("unMatch")
  *   },
  *   "max-width: 500px"//省略可
  * );
  */
-const responsiveMatch = (pcAction,spAction,media = 'max-width: 768px') => {
+const responsiveMatch = (matchAction,unMatchAction,media = 'max-width: 768px') => {
+  //第3引数に入れたメディアクエリもしくは768pxのところでmediaQuery
   const mediaQuery = window.matchMedia('('+media+')');
 
   function handleMediaChange(event) {
     if (event.matches) {
-      spAction();
+      matchAction();
     } else {
-      pcAction();
+      unMatchAction();
     }
   }
 
