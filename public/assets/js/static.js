@@ -47,16 +47,6 @@ document.addEventListener('DOMContentLoaded', function() {
     pagination: false
   });
   splideSlide.mount();
-
-  responsiveMatch(
-    () => {
-      console.log("Match")
-    },
-    () => {
-      console.log("unMatch")
-    },
-    "max-width: 500px"//省略可
-  );
 });
 
 
